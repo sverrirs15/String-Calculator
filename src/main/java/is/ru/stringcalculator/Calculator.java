@@ -9,7 +9,7 @@ public class Calculator {
 			}
 			else if(!text.contains(","))
 			{
-				return Integer.parseInt(text);
+				return StoInt(text);
 			}
 			else if(text.contains(","))
 			{
@@ -18,13 +18,20 @@ public class Calculator {
 				 int sum = 0;
 				 for(int i = 0; i < numbers.length; i++)
 				 {
-				 	sum += Integer.parseInt(numbers[i]);
+				 	sum += StoInt(numbers[i]);
 				 }
 				 return sum;
 			}
 
 			return -1;
 		}
+
+
+
+	private static int StoInt(String letter)
+	{
+		return Integer.parseInt(letter);
+	}
 		
 
 
