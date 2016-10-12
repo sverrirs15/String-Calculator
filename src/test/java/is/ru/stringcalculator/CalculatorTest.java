@@ -20,5 +20,10 @@ public class CalculatorTest {
 		assertEquals(3, Calculator.add("1,2"));
 	}
 
+	@Test
+	public void test2numbersBIG() {
+		assertEquals(0, Calculator.add("-100,100"));
+	}
+
 
 }
