@@ -11,6 +11,17 @@ public class Calculator {
 			{
 				return Integer.parseInt(text);
 			}
+			else if(text.contains(","))
+			{
+				 String[] numbers = text.split(",");
+
+				 int sum = 0;
+				 for(int i = 0; i < numbers.length; i++)
+				 {
+				 	sum += Integer.parseInt(numbers[i]);
+				 }
+				 return sum;
+			}
 
 			return -1;
 		}
