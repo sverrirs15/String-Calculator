@@ -7,18 +7,13 @@ public class Calculator {
 			{
 				return 0;
 			}
-			else if(!text.contains(","))
-			{
-				return StoInt(text);
-			}
 			else if(text.contains(",") || text.contains("\n"))
 			{
-				 String[] numbers = splittext(text);
+				String[] numbers = splittext(text);
 
-				 return getSum(numbers);
+				return getSum(numbers);
 			}
-
-			return -1;
+			return StoInt(text);
 		}
 
 	private static String[] splittext(String text)

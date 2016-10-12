@@ -40,5 +40,10 @@ public class CalculatorTest {
 		assertEquals(8, Calculator.add("1,3\n4"));
 	}
 
+	@Test
+	public void testSplitByNewlineOnly() {
+		assertEquals(7, Calculator.add("3\n4"));
+	}
+
 
 }
