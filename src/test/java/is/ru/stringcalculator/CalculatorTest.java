@@ -30,5 +30,10 @@ public class CalculatorTest {
 		assertEquals(15, Calculator.add("1,2,3,4,5"));
 	}
 
+	@Test
+	public void test10numbers() {
+		assertEquals(55, Calculator.add("1,2,3,4,5,6,7,8,9,10"));
+	}
+
 
 }
