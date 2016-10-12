@@ -13,7 +13,7 @@ public class Calculator {
 			}
 			else if(text.contains(","))
 			{
-				 String[] numbers = text.split(",");
+				 String[] numbers = text.split(",|\n");
 
 				 int sum = 0;
 				 for(int i = 0; i < numbers.length; i++)
