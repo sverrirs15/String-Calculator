@@ -7,6 +7,11 @@ public class Calculator {
 			{
 				return 0;
 			}
+			else if(!text.contains(","))
+			{
+				return Integer.parseInt(text);
+			}
+
 			return -1;
 		}
 		
