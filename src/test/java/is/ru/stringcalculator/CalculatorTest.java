@@ -63,5 +63,17 @@ public class CalculatorTest
 		}
 	}
 
+	@Test
+	public void testNegativeCastMany() 
+	{
+		try
+		{
+			Calculator.add("2,-4,3,-5");
+		} catch (final IllegalArgumentException expected) 
+		{
+			assertEquals(expected.getMessage(), "Negatives not allowed: -4,-5");
+		}
+	}
+
 
 }
