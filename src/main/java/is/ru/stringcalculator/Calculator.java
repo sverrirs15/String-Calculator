@@ -23,6 +23,30 @@ public class Calculator {
 
 	private static int getSum(String[] letters)
 	{
+		String negs = "";
+		boolean containsneg = false;
+		boolean first = true;
+	    for(int i = 0; i < letters.length; i++)
+	    {
+	    	if (StoInt(letters[i]) < 0) 
+	    	{
+	    		if(first)
+	    		{
+	    			negs += letters[i];
+	    			first = false;
+	    		}
+	    		else
+	    		{
+	    			negs += "," + letters[i];
+	    		}
+	    		containsneg = true;
+	    	}
+	    }
+	    if(containsneg)
+	    {
+	        throw new IllegalArgumentException("Negatives not allowed: " + negs);
+	    }
+
 		int sum = 0;
 		for(int i = 0; i < letters.length; i++)
 		{
