@@ -11,6 +11,8 @@ public class Calculator {
 			{
 				String[] numbers = splittext(text);
 
+				checkNeg(numbers);
+
 				return getSum(numbers);
 			}
 			return StoInt(text);
@@ -22,6 +24,22 @@ public class Calculator {
 	}
 
 	private static int getSum(String[] letters)
+	{
+		int sum = 0;
+		for(int i = 0; i < letters.length; i++)
+		{
+			sum += StoInt(letters[i]);
+		}
+		return sum;
+	}
+
+
+	private static int StoInt(String letter)
+	{
+		return Integer.parseInt(letter);
+	}
+
+	private static void checkNeg(String[] letters)
 	{
 		String negs = "";
 		boolean containsneg = false;
@@ -46,19 +64,6 @@ public class Calculator {
 	    {
 	        throw new IllegalArgumentException("Negatives not allowed: " + negs);
 	    }
-
-		int sum = 0;
-		for(int i = 0; i < letters.length; i++)
-		{
-			sum += StoInt(letters[i]);
-		}
-		return sum;
-	}
-
-
-	private static int StoInt(String letter)
-	{
-		return Integer.parseInt(letter);
 	}
 		
 
