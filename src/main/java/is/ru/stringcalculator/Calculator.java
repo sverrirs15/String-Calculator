@@ -10,31 +10,21 @@ public class Calculator {
 			}
 			else if(text.contains(",") || text.contains("\n"))
 			{
-				String[] numbers = null;
-				if(text.startsWith("//"))
-				{
-					String splitter = "" + text.charAt(2);
-					text = text.substring(text.indexOf('\n')+1);
-					numbers = text.split(splitter);
-				}
-				else
-				{
-					numbers = text.split(",|\n");
-				}
-
-
+				String[] numbers = splittext(text);
+				
 				checkNeg(numbers);
 
 				return getSum(numbers);
 			}
 			return StoInt(text);
 		}
-/*
+
 	private static String[] splittext(String text)
 	{
-		if(isdil)
+		if(text.startsWith("//"))
 		{
-			String splitter = "" + newdil;
+			String splitter = "" + text.charAt(2);
+			text = text.substring(text.indexOf('\n')+1);
 			return text.split(splitter);
 		}
 		else
@@ -42,7 +32,7 @@ public class Calculator {
 			return text.split(",|\n");
 		}
 	}
-*/
+
 	private static int getSum(String[] letters)
 	{
 		int sum = 0;
