@@ -28,9 +28,10 @@ public class Calculator {
 		int sum = 0;
 		for(int i = 0; i < letters.length; i++)
 		{
-			if(StoInt(letters[i]) <= 1000)
+			int number = StoInt(letters[i]);
+			if(number <= 1000)
 			{
-				sum += StoInt(letters[i]);
+				sum += number;
 			}
 		}
 		return sum;
