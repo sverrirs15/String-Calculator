@@ -87,5 +87,11 @@ public class CalculatorTest
 		assertEquals(0, Calculator.add("1001,2500,10000"));
 	}
 
+	@Test
+	public void differentdelimiter() 
+	{
+		assertEquals(3, Calculator.add("//;\n1;2"));
+	}
+
 
 }

@@ -2,6 +2,7 @@ package is.ru.stringcalculator;
 
 public class Calculator {
 
+
 	public static int add(String text){
 			if(text == "")
 			{
@@ -9,7 +10,18 @@ public class Calculator {
 			}
 			else if(text.contains(",") || text.contains("\n"))
 			{
-				String[] numbers = splittext(text);
+				String[] numbers = null;
+				if(text.startsWith("//"))
+				{
+					String splitter = "" + text.charAt(2);
+					text = text.substring(text.indexOf('\n')+1);
+					numbers = text.split(splitter);
+				}
+				else
+				{
+					numbers = text.split(",|\n");
+				}
+
 
 				checkNeg(numbers);
 
@@ -17,12 +29,20 @@ public class Calculator {
 			}
 			return StoInt(text);
 		}
-
+/*
 	private static String[] splittext(String text)
 	{
-		return text.split(",|\n");
+		if(isdil)
+		{
+			String splitter = "" + newdil;
+			return text.split(splitter);
+		}
+		else
+		{
+			return text.split(",|\n");
+		}
 	}
-
+*/
 	private static int getSum(String[] letters)
 	{
 		int sum = 0;
