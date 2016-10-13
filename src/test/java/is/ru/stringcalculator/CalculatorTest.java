@@ -75,5 +75,17 @@ public class CalculatorTest
 		}
 	}
 
+	@Test
+	public void biggerthan1000ignored() 
+	{
+		assertEquals(2, Calculator.add("1001,2"));
+	}
+
+	@Test
+	public void biggerthan1000ignored2() 
+	{
+		assertEquals(0, Calculator.add("1001,2500,10000"));
+	}
+
 
 }
